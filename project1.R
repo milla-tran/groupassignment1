@@ -4,7 +4,9 @@ install.packages("fpp3")
 library(shiny)
 library(fpp3)
 data("tourism")
-ui <- fluidPage("Hello world!")
+ui <- fluidPage("Hello world!",
+       plotOutput("plot")         
+               )
 
 server <- function(input, output){
    new<-filter(tourism, tourism$Region=="Adelaide")
